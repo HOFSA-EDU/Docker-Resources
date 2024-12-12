@@ -1,8 +1,6 @@
-### Introduction to Docker
-
 **Docker** is an open-source platform designed to automate the deployment, scaling, and management of applications. It uses containerization technology to package an application and its dependencies into a standardized unit called a **container**. This ensures that the application runs consistently across different computing environments.
 
-#### Key Benefits of Docker Over Virtual Machines
+## Key Benefits of Docker Over Virtual Machines
 
 1. **Lightweight and Efficient**:
     
@@ -30,7 +28,7 @@
     
     - With Docker, developers can create a consistent environment from development to production. This reduces the "it works on my machine" problem, as the container encapsulates all dependencies and configurations
 
-### Use cases
+## Use cases
 
 Docker's containerization technology offers a more efficient, portable, and scalable solution compared to traditional virtual machines, making it a popular choice for modern application development and deployment.
 

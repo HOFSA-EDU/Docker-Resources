@@ -106,6 +106,25 @@ volumes:
   docker-compose ps
 ```
 
+- **View all Services**:
+
+```bash
+  docker service ls
+```
+
+### Use Docker Compose Logs
+
+- If you are using Docker Compose, you can view logs for all services with:
+
+```sh
+  docker-compose logs
+```
+
+- To follow logs in real-time, add the `-f` flag:
+
+```sh
+  docker-compose logs -f
+```
 
 [[Docker container]]
 [[Docker network]]
