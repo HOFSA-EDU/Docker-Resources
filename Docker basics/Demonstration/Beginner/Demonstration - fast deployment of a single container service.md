@@ -33,7 +33,7 @@ docker pull ghost
 		3. -e : environment variable. The Variable NODE_ENV is here specified.
 		
 1. According to the documentation, this will start a Ghost development instance listening on the default Ghost port of 2368.
-2. Access the container on localhost:2368
+2. Access the container on localhost:2370
 
 As you can see, some functions are not available. This is because the links in the container have been set incorrectly. They are created with the default port `2368`, which does not correspond to our settings. However, we can change this by setting the environment variable `-url`:
 ```bash
