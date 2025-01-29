@@ -51,8 +51,10 @@ In the next section, you will get to try all of them.
 Try to do the following:
 
 - `git clone` this repository down.  If you are at training the repository is already cloned on your training workstation.
-- Navigate to the `labs/volumes/` directory, which contains a file we can try to serve: `index.html`.
-- We need change `/some/content` to the right path, it must be an absolute path, starting from the root of the filesystem, (which in linux is `/`). You can use the command `pwd` (Print working directory) to display the path to where you are.
+- Navigate to the `labs/volumes/` directory, which contains a file we can try to publish: `index.html`.
+- We need change `/some/content` to the right path, you can define it with the absolut or the relative path:
+	- ***absolut:*** starting from the root of the filesystem, (which in linux is `/`). You can use the command `pwd` (Print working directory) to display the path to where you are.
+	- ***relativ:*** navigate from your current position to the source
 - Now try to run the container with the `labs/volumes` directory bind mounted.
 
 This will give you a nginx server running, serving your static files... _But on which port?_
@@ -61,18 +63,37 @@ This will give you a nginx server running, serving your static files... _But on 
 
 Remember the [[Exercise 4 - Port-forward]] on port forwarding in Docker.
 
-- Make it host the site on port 8080
+- Make it accessible on port 8080
 
 <details>
 <summary>How to do this?</summary>
 
 The parameter `-p 8080:80` will map port 80 in the container to port 8080 on the host.
-
+docker run -v ./labs/volumes:/usr/share/nginx/html:ro -p 8080:80 nginx
 </details>
 
 - Check that it is running by navigating to the hostname or IP with your browser, and on port 8080.
 - Stop the container with `docker stop <container_name>` or `docker stop <container ID>`.
 
+### Use a bind-mount in a docker-compose file
+
+As in the scenario above, we define the html file in labs/volumes in a docker-compose file. For more information on docker-compose, take look at the [[Docker compose]] section.
+
+```yaml
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./labs/volumes:/usr/share/nginx/html
+```
+
+Deploy your compose file with the native docker compose command. If you are at the same location as your compose file. The command looks like this:
+
+```bash
+docker compose up
+```
 ### Volumes
 
 First off, lets try to make a data volume called `data`:
