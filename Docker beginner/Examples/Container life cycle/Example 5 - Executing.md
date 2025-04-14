@@ -1,9 +1,18 @@
-# Executing processes in your container
 
-It you want to examine a running container, but do not want to disturb the running process you can execute another process inside the container with `exec`.
+If you want to examine a running container, but do not want to disturb the running process you can execute another process inside the container with `exec`.
 
 This could be a shell, or a script of some sort. In that way you can debug an existing environment before starting a new up.
 
+# Learning Goals
+1. **Execute Secondary Processes in Containers**:
+    - Learn how to access a running container using `docker exec` to execute additional commands.
+        
+2. **Modify Files Within a Container**:
+    - Practice editing containerized files, such as the `index.html` page, using command-line text editors like Nano.
+    
+3. **Develop Container Management Skills**:
+    - Enhance familiarity with container interactions and dynamic updates without stopping or recreating containers.
+    - Understand the process of installing tools, such as Nano, in a container using package managers like `apt-get`.
 ## Exercise
 
 In this exercise, we want to change a file in an already running container, by executing a secondary process.
@@ -15,7 +24,7 @@ In this exercise, we want to change a file in an already running container, by e
 
 Step into a new container by executing a bash shell inside the container:
 
-```
+```bash
 docker exec -it CONTAINERNAME bash
 ```
 

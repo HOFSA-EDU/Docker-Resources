@@ -1,4 +1,23 @@
-# Throw your container away
+# Learning Goals
+
+1. **Understand Container Resiliency**:
+    - Observe the fast creation of new containers and the ease of starting fresh instances, even after deleting or damaging an existing one.
+        
+2. **Learn About Container Cleanup**:
+    - Understand how to delete the file system within a container and observe its impact.
+    - Experiment with automatically removing containers after their use using the `--rm` flag.
+    - Explore the `docker container rm` command to remove unused containers.
+        
+3. **Handle Images**:
+    - Understand how to remove images with `docker image rm`.
+        
+4. **Maintain a Clean Docker Environment**:
+    - Practice using `prune` commands to clean up unused containers, images, volumes, and networks.
+    - Discover the comprehensive `docker system prune` command for general cleanup of the system.
+    
+5. **Optimize Resource Usage**:
+    - Understand the storage implications of containers and images and utilize cleanup techniques to optimize disk space effectively.
+# Step-by-step instructions
 
 As containers are just a thin base layer on top of the host kernel, it is really fast to spin up a new instance if you crashed your old one.
 
@@ -8,13 +27,13 @@ Spin up the container with `docker run -it alpine`
 
 and then list all the folders on the root level to see the whole distribution:
 
-```
+```bash
 ls /
 ```
 
 Expected output:
 
-```
+```bash
 bin    etc    lib    mnt    root   sbin   sys    usr
 dev    home   media  proc   run    srv    tmp    var
 ```
@@ -25,7 +44,7 @@ whoami
 ```
 Expected output:
 
-```
+``` bash
 root
 ```
 
@@ -45,7 +64,7 @@ Wed Nov
 
 Now, delete the binaries that the system is build up of with:
 
-```
+``` bash
 rm -rf /bin
 ```
 
@@ -54,7 +73,7 @@ They should all echo back that the binary is not found.
 
 Exit out by pressing `Ctrl+d` and create a new instance of the Alpine image and look a bit around:
 
-```
+``` bash
 docker run -it alpine
 ```
 
@@ -98,20 +117,20 @@ If you want to delete them from your server you can use the `docker rm` command.
 
 Try to remove the `hello-world` container:
 
-```
+```bash
  docker container ls -a
 ```
 
 Expected output:
 
-```
+``` bash
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS                      PORTS                                                          NAMES
 6a9246ff53cb        hello-world               "/hello"                 18 seconds ago      Exited (0) 16 seconds ago                                                                  ecstatic_cray
 ```
 
 Delete the container:
 
-```
+``` bash
 docker container rm ecstatic_cray
 ```
 
@@ -123,7 +142,7 @@ ecstatic_cray
 
 The container is now gone when you execute a `ls -a` command.
 
-> :bulb: **Tip:** As with Git, you can use any unique part of the container ID to refer to it.
+>  **Tip:** As with Git, you can use any unique part of the container ID to refer to it.
 
 ### Deleting images
 
@@ -131,7 +150,7 @@ You deleted the container instance above, but not the image of hello-world itsel
 
 First off, list all the images you have downloaded to your computer:
 
-```
+``` bash
 docker image ls
 ```
 
@@ -146,13 +165,13 @@ hello-world                             latest                48b5124b2768      
 Here you can see the images downloaded as well as their size.
 To remove the hello-world image use the `docker image rm` command together with the id of the docker image.
 
-```
+``` bash
 docker image rm 48b5124b2768
 ```
 
 Expected output:
 
-```
+``` bash
 Untagged: hello-world:latest
 Untagged: hello-world@sha256:c5515758d4c5e1e838e9cd307f6c6a0d620b5e07e6f927b07d05f6d12a1ac8d7
 Deleted: sha256:48b5124b2768d2b917edcb640435044a97967015485e812545546cbed5cf0233
@@ -161,7 +180,7 @@ Deleted: sha256:98c944e98de8d35097100ff70a31083ec57704be0991a92c51700465e4544d08
 
 What docker did here was to `untag` the image removing the references to the sha of the image. After the image has no references, it deletes the two layers the image itself is comprised of.
 
-### Cleaning up
+### Cleaning up your system
 
 When building, running and rebuilding images, you download and store a lot of layers. These layers will not be deleted, as docker takes a very conservative approach to clean up.
 

@@ -1,4 +1,15 @@
-# A basic webserver
+# Learning Goals
+1. **Set Up a Basic Webserver**:
+    - Learn to pull the `nginx` Docker image and utilize it as a webserver to serve a static HTML website.
+        
+2. **Understand Port Mapping**:
+    - Use the `-p` flag in the `docker run` command to expose container ports to host ports.
+    - Grasp the syntax and logic of mapping host and container ports effectively.
+        
+3. **Interact with the Webserver**:
+    - Access the webserver on different platforms using browser URLs or commands like `curl localhost:8080`.
+    - Observe console logs to understand webserver activity when accessed by browsers.
+# Step-by-step instruction for a basic webserver
 
 Running arbitrary Linux commands inside a Docker container is fun, but let's do something more useful.
 
@@ -8,14 +19,13 @@ Start a new container from the `nginx` image that exposes port 80 from the conta
 
 > Mapping ports between your host machine and your containers can get confusing.
 > Here is the syntax you will use:
->
-> ```
-> docker run -p 8080:80 nginx
-> ```
->
-> The trick is to remember that **the host port always goes to the left**,
-> and **the container port always goes to the right.**
+```bash
+docker run -p 8080:80 nginx
+```
+> The trick is to remember that **the host port always goes to the left**, and **the container port always goes to the right.**
 > Remember it as traffic coming _from_ the host, _to_ the container.
+
+
 
 Open a web browser and go to port 8080 on your host. The exact address will depend on how you're running Docker today:
 
@@ -29,13 +39,13 @@ If you see a webpage saying "Welcome to nginx!" then you're done!
 
 If you look at the console output from docker, you see nginx producing a line of text for each time a browser hits the webpage:
 
-```
+```bash
 docker run -p 8080:80 nginx
 ```
 
 Expected output:
 
-```
+```bash
 172.17.0.1 - - [16/December/2024:11:52:48 +0000] "GET / HTTP/1.1" 200 612 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0" "-
 ```
 
@@ -66,6 +76,9 @@ docker stop 78c943461b49584ebdf841f36d113567540ae460387bbd7b2f885343e7ad7554
 ```
 Docker prints out the ID of the stopped container.
 
-```
+```bash
 78c943461b49584ebdf841f36d113567540ae460387bbd7b2f885343e7ad7554
 ```
+
+# Summary
+In this example, you learned how to map ports effectively using the `-p` flag in Docker. By understanding that the host port is always on the left and the container port on the right, you can confidently connect your containerized applications to your host machine. This fundamental skill ensures smooth communication between your host and containers.

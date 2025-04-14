@@ -1,13 +1,29 @@
-## Learning Goals
+# Learning Goals
 
-The goal of this scenario is to make you run your first Docker container.
+1. **Understand Key Terminology**: Familiarize yourself with essential Docker concepts, including:
+    - _Docker Container_: Its purpose and role as an isolated environment for running applications.
+    - _Docker Image_: Its function as a package containing all necessary code and dependencies.
+    
+2. **Run Your First Docker Command**: Execute the `docker run hello-world` command to:
+    - Verify that Docker is installed and functioning correctly.
+    - Observe how Docker pulls an image and creates a container.
+        
+3. **Interpret Terminal Output**:
+    - Learn to analyze the output from Docker commands.
+    - Gain insight into the steps performed by Docker, such as pulling an image, creating a container, and executing the container’s instructions.
+        
+4. **Explore Repetition Effects**:
+    - Rerun the `docker run hello-world` command to compare outputs and understand caching and performance improvements.
+        
+5. **Develop Familiarity with Docker Documentation**:
+    - Access further examples and resources to deepen your understanding of Docker usage.
 
-## Terminology
+# Terminology
 
 *Docker Container*: An isolated, runnable environment that holds everything needed to run an application.
 
 *Docker Image*: A lightweight, standalone package that contains all necessary code, libraries, and dependencies to run an application.
-## Exercise
+# Step-by-step instructions
 
 Try running a command with Docker:
 ```bash
@@ -67,8 +83,6 @@ For more examples and ideas, visit:
 This message shows that your installation appears to be working correctly.
 
 *Q: So what did this do?*
-
-
 
 Try to run `docker run hello-world` again.
 

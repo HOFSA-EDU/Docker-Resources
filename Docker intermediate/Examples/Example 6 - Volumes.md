@@ -61,7 +61,7 @@ This will give you a nginx server running, serving your static files... _But on 
 
 - Run a `docker ps` command to find out if it has any ports forwarded from the host.
 
-Remember the [[Exercise 4 - Port-forward]] on port forwarding in Docker.
+Remember the [[Example 4 - Port-forward]] on port forwarding in Docker.
 
 - Make it accessible on port 8080
 

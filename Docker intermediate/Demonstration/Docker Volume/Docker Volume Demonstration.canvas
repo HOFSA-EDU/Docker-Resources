@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"007c748c1b0de270","type":"text","text":"**From** python:3.9\n\n**WORKDIR** /app\n\n**COPY** main.py .\n\n**ENTRYPOINT** [\"python\", \"main.py\"]","x":-500,"y":-260,"width":345,"height":217,"color":"1"},
+		{"id":"2cf5629b22f2e8b8","type":"file","file":"Docker-Resources/Images/Container.png","x":-395,"y":100,"width":136,"height":136},
+		{"id":"b1b7c7326d6348d6","type":"file","file":"Docker-Resources/Images/Container.png","x":500,"y":72,"width":136,"height":136},
+		{"id":"c19e8d193eca03fe","type":"file","file":"Docker-Resources/Images/Volume.png","x":780,"y":-123,"width":160,"height":160},
+		{"id":"d7d970eb12f11756","type":"file","file":"Docker-Resources/Images/Container.png","x":1620,"y":72,"width":136,"height":136},
+		{"id":"ebb993b37c5377e2","type":"file","file":"Docker-Resources/Images/Volume.png","x":1900,"y":-123,"width":160,"height":160},
+		{"id":"2d8ed8876c6ec7cd","type":"file","file":"Docker-Resources/Images/Container.png","x":2220,"y":72,"width":136,"height":136}
+	],
+	"edges":[
+		{"id":"e96de71e8bc247ac","fromNode":"007c748c1b0de270","fromSide":"bottom","toNode":"2cf5629b22f2e8b8","toSide":"top"},
+		{"id":"afcfcd57f4acf620","fromNode":"b1b7c7326d6348d6","fromSide":"right","toNode":"c19e8d193eca03fe","toSide":"left","label":"/usr/src/app"},
+		{"id":"6702012f44f62a54","fromNode":"d7d970eb12f11756","fromSide":"right","toNode":"ebb993b37c5377e2","toSide":"left"},
+		{"id":"b3dc66b95bb69780","fromNode":"2d8ed8876c6ec7cd","fromSide":"left","toNode":"ebb993b37c5377e2","toSide":"right"}
+	]
+}
