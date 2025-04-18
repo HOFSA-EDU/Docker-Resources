@@ -1,16 +1,16 @@
 # Learning Goals
 
-1. **Understand the Difference Between** `ENTRYPOINT` **and** `CMD`:
+1. **Understand the difference between** `ENTRYPOINT` **and** `CMD`:
     - Learn that `CMD` provides default commands that can be fully overridden when running the container.
     - Discover how `ENTRYPOINT` ensures a specific executable always runs, allowing additional arguments without replacing the main command.
         
-2. **Enhance Container Security**:
+2. **Enhance container security**:
     - Recognize the importance of hardening containers by using `ENTRYPOINT` to restrict misuse and define a clear purpose.
         
 3. **Combine** `ENTRYPOINT` **and `CMD**:
     - Explore best practices for combining `ENTRYPOINT` for mandatory commands and `CMD` for optional arguments.
         
-4. **Practice Dockerfile Configuration**:
+4. **Practice Dockerfile configuration**:
     - Write and understand Dockerfiles that implement `ENTRYPOINT` and `CMD` to customize container behavior.
 
 # Step-by-step instrcutions
@@ -44,7 +44,7 @@ docker run <image> ls
 ```bash
 docker run <image> https://www.lam.lu
 ```
-# Explanation of `ENTRYPOINT` vs `CMD`
+# Explanation: `ENTRYPOINT` vs `CMD`
 
 - **CMD**: Provides default arguments or commands to run in the container. It can be overridden by specifying a new command when starting the container.
 
@@ -55,4 +55,5 @@ docker run <image> https://www.lam.lu
 
 > An entrypoint can not be overwritten! A common way to combine ENTRYPOINT and CMD is, to use CMD for arguments and ENTRYPOINT for the main command itself.
 
-
+# Summary
+The handling of `ENTRYPOINT` and `CMD` is part of the area of securing Docker images. Under no circumstances should you leave room for the misuse of Docker containers in your own system. If these are started in a multi-container application, they can also access the functionalities of other containers.

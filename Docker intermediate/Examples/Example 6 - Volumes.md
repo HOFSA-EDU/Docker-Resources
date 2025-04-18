@@ -213,25 +213,11 @@ The data volume is still present, and will be there until you remove it with a `
 As you have seen, the `-v` flag can both create a bind mount or name a volume depending on the syntax. If the first argument begins with a / or ~/ you're creating a bind mount. Remove that, and you're naming the volume. For example:
 
 - `-v /path:/path/in/container` mounts the host directory, `/path` at the `/path/in/container`
-- `-v path:/path/in/container` creates a volume named path with no relationship to the host.
+- `-v path:/path/in/container` creates a volume named *path* with no relationship to the host.
 
 ### Sharing data
 
 If you want to share volumes or bind mount between two containers, then use the `--volumes-from` option for the second container. The parameter maps the mapped volumes from the source container to the container being launched.
-
-## More advanced docker commands
-
-Before you go on, use the [Docker command line interface](https://docs.docker.com/engine/reference/commandline/cli/) documentation to try a few more commands:
-
-- While your detached container is running, use the `docker ps` command to see what silly name Docker gave your container. **This is one command you're going to use often!**
-- While your detached container is still running, look at its logs. Try following its logs and refreshing your browser.
-- Stop your detached container, and confirm that it is stopped with the `ps` command.
-- Start it again, wait 10 seconds for it to fire up, and stop it again.
-- Then delete that container from your system.
-
-> **NOTE:** When running most docker commands, you only need to specify the first few characters of a container's ID. For example, if a container has the ID `df4fd19392ba`, you can stop it with `docker stop df4`. You can also use the silly names Docker provides containers by default, such as `boring_bardeen`.
-
-If you want to read more, I recommend [Digital Oceans](https://www.digitalocean.com/community/tutorials/how-to-share-data-between-docker-containers) guides to sharing data through containers, as well as Dockers own article about [volumes](https://docs.docker.com/engine/admin/volumes).
 
 ## Summary
 
