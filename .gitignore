@@ -1,0 +1,8 @@
+# Ignore the .obsidian folder
+.obsidian/
+
+# Ignore the Docker advanced folder
+Docker_advanced/
+
+# Ignore the Docker intermediate folder
+Docker_intermediate/
