@@ -17,6 +17,7 @@
     
 5. **Optimize Resource Usage**:
     - Understand the storage implications of containers and images and utilize cleanup techniques to optimize disk space effectively.
+
 # Step-by-step instructions
 
 As containers are just a thin base layer on top of the host kernel, it is really fast to spin up a new instance if you crashed your old one.

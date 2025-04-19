@@ -60,6 +60,7 @@ In essence, Docker is great for containerizing and running individual applicatio
     
     - Docker Compose supports defining volumes to persist data across container restarts. This is useful for databases and other services that need to retain state.
 
+---
 ## Example `docker-compose.yml` File
 
 Here's a simple example of a `docker-compose.yml` file for a web application with a front-end, back-end, and database service:

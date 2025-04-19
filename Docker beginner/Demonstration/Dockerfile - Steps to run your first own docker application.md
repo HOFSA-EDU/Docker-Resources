@@ -31,14 +31,14 @@ server.listen(port, hostname, () =>{
 
 *package.json*
 ```json
-    "name": "dockerfile_example",
-    "version": "1.0.0",
-    "description": "My dockerized Node.js application",
-    "main": "index.js",
-    "dependencies": {},
-    "scripts": {
-        "start": "node index.js"
-    }
+"name": "dockerfile_example",
+"version": "1.0.0",
+"description": "My dockerized Node.js application",
+"main": "index.js",
+"dependencies": {},
+"scripts": {
+    "start": "node index.js"
+}
 ```
 
 ### Build your Dockerfile with the following commands

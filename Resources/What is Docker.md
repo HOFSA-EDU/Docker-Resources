@@ -66,4 +66,4 @@ Docker is incredibly versatile and is used across various industries for numerou
     - Docker can containerize legacy applications, allowing them to run on modern infrastructure without significant changes to the codebase. This helps extend the life of older applications while leveraging new technologies.
 
 These use cases highlight Docker's ability to enhance development workflows, improve resource efficiency, and provide flexibility in deployment strategies.
-[[Install Docker]]
+[[Docker installation]]

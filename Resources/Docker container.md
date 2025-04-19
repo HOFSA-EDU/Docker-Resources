@@ -25,6 +25,7 @@ Docker containers are lightweight, portable, and self-sufficient units that pack
     - Once you no longer need a container, you can remove it to free up resources.
     - **Command**: `docker rm <container>` - This removes a stopped container.
 
+---
 ### Example Workflow
 
 1. **Pull an Image**:

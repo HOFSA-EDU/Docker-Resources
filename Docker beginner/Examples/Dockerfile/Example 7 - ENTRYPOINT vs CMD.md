@@ -7,7 +7,7 @@
 2. **Enhance container security**:
     - Recognize the importance of hardening containers by using `ENTRYPOINT` to restrict misuse and define a clear purpose.
         
-3. **Combine** `ENTRYPOINT` **and `CMD**:
+3. **Combine** `ENTRYPOINT` and `CMD`:
     - Explore best practices for combining `ENTRYPOINT` for mandatory commands and `CMD` for optional arguments.
         
 4. **Practice Dockerfile configuration**:
@@ -44,6 +44,7 @@ docker run <image> ls
 ```bash
 docker run <image> https://www.lam.lu
 ```
+
 # Explanation: `ENTRYPOINT` vs `CMD`
 
 - **CMD**: Provides default arguments or commands to run in the container. It can be overridden by specifying a new command when starting the container.
