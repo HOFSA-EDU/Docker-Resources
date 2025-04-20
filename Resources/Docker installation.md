@@ -1,5 +1,4 @@
 ## Installing Docker on Windows
-
 ### 1. **Download Docker Desktop**
 Visit the [Docker website](https://www.docker.com/products/docker-desktop/) and download the installer.
 
@@ -12,9 +11,7 @@ Ensure that Windows Subsystem for Linux 2 (WSL2) is enabled:
 - Install WSL2 by following Microsoft's documentation.
 - Enable WSL2 in Docker Desktop settings.
 
-
 ## Installing Docker on macOS
-
 ### 1. **Download Docker Desktop**
 Visit the [Docker Desktop website](https://www.docker.com/products/docker-desktop/) and download the installer.
 
@@ -30,7 +27,6 @@ docker --version
 ```
 
 ## Post-Installation Steps
-
 ### Manage Docker as a Non-Root User
 Add your user to the `docker` group:
 ```bash

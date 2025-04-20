@@ -32,11 +32,10 @@ See here: [[Docker volume]] [[Docker network]] [[Docker container]]
     - **Docker Compose**: Manages multi-container applications, making it easier to orchestrate complex setups.
     
 - **Configuration**:
-    
     - **Docker**: Uses command-line instructions to run and manage containers.
     - **Docker Compose**: Uses a YAML file to define and manage multiple containers and their configurations.
-- **Use Case**:
     
+- **Use Case**:
     - **Docker**: Ideal for running single containers or simple applications.
     - **Docker Compose**: Best suited for applications that require multiple interconnected services.
 
@@ -45,24 +44,22 @@ In essence, Docker is great for containerizing and running individual applicatio
 #### How Docker Compose Works
 
 1. **Configuration with YAML**:
-    
     - Docker Compose uses a YAML file (`docker-compose.yml`) to define the services, networks, and volumes for your application. This file describes how to build and run each container, including details like the image to use, environment variables, ports to expose, and dependencies.
+
 2. **Single Command Operations**:
-    
     - With Docker Compose, you can start, stop, and manage all the services defined in your `docker-compose.yml` file using simple commands. For example, `docker-compose up` starts all the services, while `docker-compose down` stops and removes them.
+
 3. **Service Dependencies**:
-    
     - Docker Compose allows you to define dependencies between services. This ensures that services start in the correct order and wait for their dependencies to be ready before starting.
+
 4. **Networking**:
-    
     - By default, Docker Compose creates a network for all the services defined in the `docker-compose.yml` file. This network allows the containers to communicate with each other using their service names as hostnames.
+
 5. **Volumes**:
-    
     - Docker Compose supports defining volumes to persist data across container restarts. This is useful for databases and other services that need to retain state.
 
 ---
 ## Example `docker-compose.yml` File
-
 Here's a simple example of a `docker-compose.yml` file for a web application with a front-end, back-end, and database service:
 
 ```yaml
@@ -88,7 +85,6 @@ volumes:
 ```
 
 ## Key Commands
-
 - **Start Services**:
 
 ```bash
@@ -114,7 +110,6 @@ volumes:
 ```
 
 ### Use Docker Compose Logs
-
 - If you are using Docker Compose, you can view logs for all services with:
 
 ```sh

@@ -4,7 +4,7 @@ A **Dockerfile** is a script that contains a series of instructions to build a D
 
 ## Basic Structure of a Dockerfile
 
-Here are some common directives used in a Dockerfile:
+Here are some common commands used in a Dockerfile:
 
 1. **FROM**: Specifies the base image to start with (e.g., `FROM ubuntu:20.04`).
 2. **RUN**: Executes commands to **install software** or make **modifications to the image**.
@@ -37,7 +37,7 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 ```
 
-This Dockerfile:
+**This Dockerfile:**
 
 - Starts with a lightweight Python image.
     
@@ -85,4 +85,27 @@ If you can not find your freshly created image, then the building process was no
   docker build --no-cache -t <image_name> .
 ```
 
+# Other commands used in dockerfiles
+
+- **LABEL**: Adds metadata to an image, such as a description or version. Example: `LABEL maintainer="hoffmann.sam@education.lu"`.
+    
+- **ENTRYPOINT**: Defines the main executable for the container. It works with CMD for arguments. Example: `ENTRYPOINT ["python"]`.
+    
+- **ADD**: Similar to COPY but with extra functionality, such as extracting archives or downloading files from URLs. Example: `ADD app.tar.gz /usr/src/app`.
+    
+- **EXPOSE**: Indicates the port on which the container will listen. Example: `EXPOSE 8080`.
+    
+- **ENV**: Sets environment variables for the container. Example: `ENV APP_ENV=production`.
+    
+- **VOLUME**: Creates mount points for persistent storage. Example: `VOLUME /data`.
+    
+- **USER**: Specifies the user under which the container will run. Example: `USER nonroot`.
+    
+- **ARG**: Defines build-time variables. Example: `ARG build_version=1.0`.
+    
+- **ONBUILD**: Adds a trigger instruction to an image for actions in child images. Example: `ONBUILD RUN apt-get install -y dependency`.
+    
+- **HEALTHCHECK**: Adds a health check for the container to ensure it’s running properly. Example: `HEALTHCHECK CMD curl http://localhost:8080`.
+    
+- **SHELL**: Changes the default shell used in the RUN command. Example: `SHELL ["/bin/bash", "-c"]`.
 [[Docker image]]

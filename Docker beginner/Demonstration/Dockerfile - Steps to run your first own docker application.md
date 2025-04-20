@@ -40,6 +40,41 @@ server.listen(port, hostname, () =>{
     "start": "node index.js"
 }
 ```
+---
+### Containerize our application
+To create a customised container for our application, we need to define a Docker image. We use a Dockerfile to describe the dependencies and resources that should be available in the container.
+
+*dockerfile*
+```dockerfile
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY . /app
+
+RUN npm install
+
+EXPOSE 3000
+
+ENV NAME=dockerfile-example
+
+CMD ["npm", "start"]
+```
+
+#### Dockerfile explanation
+- **FROM** defines our base image. In most cases, a slim OS like Linux Alpine oder Mint hits the spot. Sometimes you can find a preconfigured base image for a variety of programming languages or frameworks. Like in this case.
+
+- **WORKDIR** - Defines the current working directory in the container. Every relativ path will now start from this location
+
+- **COPY** - Copies files in the docker container
+
+- **RUN** - Runs a command during the building phase of the docker image. Here we install the dependencies, provided from the package.json file, for our software with the Node Package Manager.
+
+- **EXPOSE** - Defines the port where the container is listening. We have to user port 3000 because it is set in our index.js
+
+- **ENV** - Sets environment variables needed from the software inside the container.
+
+- **CMD** - Executes a command when the container starts. Here we start our software.
 
 ### Build your Dockerfile with the following commands
 ```bash
