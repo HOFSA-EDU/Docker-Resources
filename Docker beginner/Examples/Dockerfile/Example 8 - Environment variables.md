@@ -1,7 +1,6 @@
 When you realise applications with Docker, you often have to define environment variables that the software accesses. As with the definition of a `venv`, you can also define these variables in Dockerfiles.
 In this example, we will look at how to find out the predefined variables of a base image.
 # Learning Goals
-
 1. Research which predefined variables exist
 	- Inside a docker container
 	- Inspecting a docker image
@@ -12,17 +11,17 @@ In this example, we will look at how to find out the predefined variables of a b
 	- In a dockerfile
 
 3. Define your own environment variables
-# Step-by-step instrcutions
 
+# Step-by-step instrcutions
 There are three approaches to finding out which environment variables can be set:
 
-## Inspection the docker image
+## Inspecting the docker image
 1. Use the docker pull command to download your desired image on the hosting device
 ```bash 
 docker pull mariadb
 ```
 
-2. Inspect the docker image with the docker inspect command
+2. Inspect the docker image with the **docker inspect command**
 	- Look for the Env section in the output
 ```bash
 docker inspect mariadb
@@ -41,7 +40,6 @@ The output for this example shout look like this:
 Here you can see the predefined environmental variables from this image.
 
 ## Inspection the environmental variables inside a running container
-
 For this example, we run a fresh Ubuntu container. 
 ```bash
 docker run -it ubuntu:latest bash
@@ -49,18 +47,16 @@ docker run -it ubuntu:latest bash
 
 Inside of it, we execute the following command:
 ```bash
-root@6e8e793848c5:/# printenv
+printenv
 ```
 
 > This is only possible, if your container hosts a shell to interact with! The command may also change depending on the OS.
 
 ## Reading the documentation of the image
-
 The default location, where to find tutorials from docker images, is docker hub. For our example, we can take a closer look at the mariadb image. https://hub.docker.com/_/mariadb
 
 ## Definition of environment variables in the docker run command
-
-There are many ways to define an environment variable. In addition to a Dockerfile, you can also specify it in the docker run command. To do this, use the tag `--env`:
+There are many ways to define an environment variable. In addition to a Dockerfile, you can also specify it in the docker run command. To do this, use the tag `--env` or `-e`:
 ```bash
 $ docker run -d --name some-mariadb --env MARIADB_ROOT_PASSWORD=my-secret-pw  mariadb:latest
 ```

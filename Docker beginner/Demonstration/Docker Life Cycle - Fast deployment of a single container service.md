@@ -24,16 +24,16 @@ docker pull ghost
 
 2. Run the container out of the downloaded image
 	````bash 
-	docker run -d --name some-ghost -p 2370:2368 -e NODE_ENV=development ghost
+docker run -d --name some-ghost -p 2370:2368 -e NODE_ENV=development ghost
 	````
 
-	1. Here we have some manipulations on the deployment:
+3. Here we have some manipulations on the deployment:
 		1. -d : detached mode - the container runs in the background, freeing up the terminal for other tasks
 		2. --name : provides the deployed container a name. The container can now be addressed with
 		3. -e : environment variable. The Variable NODE_ENV is here specified.
 		
-1. According to the documentation, this will start a Ghost development instance listening on the default Ghost port of 2368.
-2. Access the container on localhost:2370
+4. According to the documentation, this will start a Ghost development instance listening on the default Ghost port of 2368.
+5. Access the container on localhost:2370
 
 As you can see, some functions are not available. This is because the links in the container have been set incorrectly. They are created with the default port `2368`, which does not correspond to our settings. However, we can change this by setting the environment variable `-url`:
 ```bash

@@ -45,7 +45,7 @@
 To get started, let's run the following in our terminal:
 
 ````bash
-docker pull alipne
+docker pull alpine
 ````
 
 The `pull` command fetches the alpine **image** from the **Docker registry** and saves it in your system. You can use the `docker image ls` command to see a list of all images on your system.
@@ -118,8 +118,6 @@ More Details
 
 In this case, the Docker client ran the `echo` command in a new alpine container and then exited it. If you've noticed, all of that happened pretty quickly. Imagine booting up a virtual machine, running a command and then killing it. Now you know why they say containers are fast!
 
-  
-
 </details>
 
 Try another command:
@@ -132,7 +130,7 @@ Wait, nothing happened! Is that a bug?
 
 Well, no.
 
-These interactive shells will exit after running any scripted commands, unless they are run in an interactive terminal - so for this example to not exit, you need to add the parameters `i` and `t`.
+These interactive shells will exit after running any scripted commands, unless they run in an interactive terminal - so for this example to not exit, you need to add the parameters `i` and `t`.
 
 >The flags `-it` are short for `-i -t` which again are the short forms of `--interactive` (Keep STDIN open) and  `--tty` (Allocate a terminal).
 

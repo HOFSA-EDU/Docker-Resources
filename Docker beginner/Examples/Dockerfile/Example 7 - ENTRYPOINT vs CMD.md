@@ -14,7 +14,7 @@
     - Write and understand Dockerfiles that implement `ENTRYPOINT` and `CMD` to customize container behavior.
 
 # Step-by-step instrcutions
-
+Create a new folder on your hosting machine and define the following dockerfile:
 ```bash
 # Use an official Ubuntu base image
 FROM ubuntu:20.04
@@ -26,6 +26,28 @@ RUN apt-get update && apt-get install -y curl
 CMD ["curl", "https://www.lgk.lu"]
 ```
 
+>Starting from an Ubuntu base image, we install curl for our example. With the **RUN** command, the installation is executed **during the building process**, not when the container is started!
+
+Now create a docker image from the given Dockerfile:
+```bash
+docker build -t step1 .
+```
+
+> Use the **-t** flag to define a name for your docker image. In this example, the name of the freshly created image is *step1*.
+
+Start your container and take a loot at the output:
+```bash
+docker run step1
+```
+
+The functionality of our image is therefore to execute a cur command on a web page. But what happens if we pass a different command for execution when starting the container?
+```bash
+docker run step1 ls -la
+```
+
+>The initial command is completely overwritten! This is a peculiarity of the CMD instruction in our Dockerfile. It is therefore possible to misuse this container.
+
+Now adapt your Dockerfile as follows and apply the two commands below:
 ```bash
 FROM ubuntu:20.04
 
@@ -44,6 +66,9 @@ docker run <image> ls
 ```bash
 docker run <image> https://www.lam.lu
 ```
+
+>The curl command can no longer be overwritten. Only the CMD instruction can be customised. This gives the Docker container more flexibility.
+
 
 # Explanation: `ENTRYPOINT` vs `CMD`
 

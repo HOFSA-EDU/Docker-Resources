@@ -82,8 +82,6 @@ For more examples and ideas, visit:
 
 This message shows that your installation appears to be working correctly.
 
-*Q: So what did this do?*
-
 Try to run `docker run hello-world` again.
 
-*Q: Was something different? Take a closer look at the time to deploy.*
+*Q: Was something different? Take a closer look at the time to deploy the container.*

@@ -9,8 +9,8 @@
 3. **Interact with the Webserver**:
     - Access the webserver on different platforms using browser URLs or commands like `curl localhost:8080`.
     - Observe console logs to understand webserver activity when accessed by browsers.
-# Step-by-step instruction for a basic webserver
 
+# Step-by-step instruction for a basic webserver
 Running arbitrary Linux commands inside a Docker container is fun, but let's do something more useful.
 
 Pull down the `nginx` Docker image from the Docker Hub. This Docker image uses the [Nginx](http://nginx.org/) webserver to serve a static HTML website.
@@ -25,11 +25,9 @@ docker run -p 8080:80 nginx
 > The trick is to remember that **the host port always goes to the left**, and **the container port always goes to the right.**
 > Remember it as traffic coming _from_ the host, _to_ the container.
 
-
-
 Open a web browser and go to port 8080 on your host. The exact address will depend on how you're running Docker today:
 
-- **Native Linux** - [http://localhost:8080](http://localhost:8080)
+- **Native Linux/Windows** - [http://localhost:8080](http://localhost:8080)
 - **Cloud server** - Make sure firewall rules are configured to allow traffic on port 8080. Open browser and use the hostname (or IP) for your server.
   Ex: [http://inst1.prefix.eficode.academy:8080](http://inst1.prefix.eficode.academy:8080) -
   Alternatively open a new shell and issue `curl localhost:8080`
@@ -58,16 +56,15 @@ Instead we should make it run in the background, freeing up our terminal for oth
 Docker enables this with the `-d` parameter for the `run` command.
 For example: `docker run -d -p 8080:80 nginx`
 
-```
+```bash
 docker run -p 8080:80 -d nginx
 ```
 
 Docker prints out the container ID and returns to the terminal.
 
-Congratulations! You have just started a container in the background. :tada:
+Congratulations! You have just started a container in the background.
 
 ## Cleanup
-
 Stop the container you just started.
 Remember that your container ID is different from the one in the example.
 

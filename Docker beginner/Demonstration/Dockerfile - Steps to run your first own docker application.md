@@ -31,13 +31,15 @@ server.listen(port, hostname, () =>{
 
 *package.json*
 ```json
-"name": "dockerfile_example",
-"version": "1.0.0",
-"description": "My dockerized Node.js application",
-"main": "index.js",
-"dependencies": {},
-"scripts": {
-    "start": "node index.js"
+{
+    "name": "dockerfile_example",
+    "version": "1.0.0",
+    "description": "My dockerized Node.js application",
+    "main": "index.js",
+    "dependencies": {},
+    "scripts": {
+        "start": "node index.js"
+    }
 }
 ```
 ---
@@ -93,9 +95,9 @@ To see the created image, you can use the command
 docker run -p 3000:3000 dockerfiledemonstration
 ```
 <details>
-As you can remember, we allocated the port 3000 to our node.js server. The map the ports from our docker container to our hosting device, we have to specify this one.
+As you can remember, we allocated the port 3000 to our node.js server. To map the ports from our docker container to our hosting device, we have to specify this one.
 The left side of the mapping stand for the hosting device and the right one for the container side.
-Remember: the hosting port can be different from the container port! But as we exposed the port 3000 from our container, this as to be static to reach our node.js server.
+Remember: the hosting port can be different from the container port! But as we exposed the port 3000 from our container, this has to be static to reach our node.js server.
 </details>
 
 The expected output should be like this
