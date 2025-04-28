@@ -46,3 +46,13 @@ PGADMIN_MAIL=hofsa@lgk.lu
 PGADMIN_PW=test..123
 ```
 
+---
+
+## Configure your pgAdmin
+Go to the website: `127.0.0.1:5050` and create a new profile. 
+Connect to the database with the address: postgres and the defined credentials in your `.env`file.
+
+---
+
+## Conclusion
+As you can see there is *no ip-address needed* for the *pgAdmin configuration*. The reason for this is, that docker uses the *internal DNS* created by the docker compose command. Now you have an idea how you can setup an infrastructure using *docker compose*.
