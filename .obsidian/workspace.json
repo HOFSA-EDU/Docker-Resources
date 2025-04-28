@@ -11,13 +11,35 @@
             "id": "98b9bdd7dfdcbd54",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Docker beginner/Examples/Dockerfile/Example 6 - Basic commands and execution time.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Example 6 - Basic commands and execution time"
+            }
+          },
+          {
+            "id": "b12bb7178b7e0cf3",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Resources/Docker Life Cycle.canvas",
+                "viewState": {
+                  "x": -137.5,
+                  "y": -1907.1744923857868,
+                  "zoom": -1.607217642810361
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Docker Life Cycle"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -36,7 +58,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -158,8 +181,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98b9bdd7dfdcbd54",
+  "active": "b12bb7178b7e0cf3",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "Untitled.md",
+    "Docker beginner/Examples/Dockerfile/Example 6 - Basic commands and execution time.md",
+    "Docker beginner/Demonstration/Dockerfile - Steps to run your first own docker application.md",
+    "Docker beginner/Examples/Dockerfile/Example 7 - ENTRYPOINT vs CMD.md",
+    "Docker beginner/Examples/Container life cycle/Example 1 - First container.md",
+    "Docker beginner/Examples/Container life cycle/Example 2 - Running images.md",
+    "Resources/Docker Life Cycle.canvas",
+    "Docker beginner/Demonstration/Docker Life Cycle - Fast deployment of a single container service.md",
+    "Docker beginner/Examples/Container life cycle/Example 4 - Port-forward.md",
+    "Docker beginner/Examples/Container life cycle/Example 3 - Deletion.md",
+    "Resources/Docker compose.md",
+    "Resources/Docker image.md",
+    "How to use this companion.md",
+    "Docker beginner/Examples/Dockerfile/Example 8 - Environment variables.md",
+    "Resources/Docker installation.md",
+    "Resources/Docker container.md",
+    "Docker beginner/Examples/Container life cycle/Example 5 - Executing in a running container.md",
+    "Resources/Docker Swarm.md",
     "Docker basics/Docker compose.md",
     "Docker basics/Docker container.md",
     "Docker basics/Docker network.md",
