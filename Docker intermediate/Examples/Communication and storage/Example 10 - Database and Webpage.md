@@ -13,9 +13,9 @@ mkdir example9 && cd example9
 
 **Step 2: Create a Custom Network**
 - Set up a custom network named `web_database_network`:
-    ```bash
+```bash
 docker network create web_database_network
-    ```
+```
     
 **Step 3: Deploy a Database Container**
 - Run a MySQL database container connected to the custom network:
