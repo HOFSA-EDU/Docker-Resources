@@ -134,4 +134,4 @@ In this lab, you created a custom Docker network (a user defined bridge) and dep
 - 1 MySQL database 
 - 1 PHP-based web application 
 
-You demonstrated how containers communicate using Docker networks, and successfully tested their connectivity. This setup mimics real-world applications where a backend database interacts with a frontend.
+You demonstrated how containers communicate using Docker networks, and successfully tested their connectivity. This setup mimics real-world applications where a backend database interacts with a frontend. 
