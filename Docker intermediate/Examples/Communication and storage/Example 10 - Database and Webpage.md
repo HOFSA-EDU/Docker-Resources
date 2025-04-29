@@ -19,14 +19,14 @@ docker network create web_database_network
     
 **Step 3: Deploy a Database Container**
 - Run a MySQL database container connected to the custom network:
-    ```bash
+```bash
 docker run -d \
 --name database \
 --network web_database_network \
 -e MYSQL_ROOT_PASSWORD=rootpassword \
 -e MYSQL_DATABASE=labdb \
 mysql:latest
-    ```
+```
 > The --network tag in the docker run command defines the network for our docker container
 
 Environment:
@@ -34,14 +34,14 @@ Environment:
 - `MYSQL_DATABASE`: Name of the database (`labdb`).
 
 -  Verify the database container is running:
-    ```bash
+```bash
 docker ps
-    ```
+```
     
 **Step 4: Create a Simple Web Application**
 
 -  Create a file named `index.php` with the following PHP code:
-    ```php
+```php
     <?php
     $host = 'database';
     $db = 'labdb';
@@ -55,24 +55,24 @@ docker ps
     }
     echo "Connected to the database successfully!";
     ?>
-    ```
+```
 
 >This PHP script attempts to connect to the database container using its network alias (`database`).
 
 -  Create a `Dockerfile` for the web application:
-    ```dockerfile
+```dockerfile
 FROM php:7.4-apache
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 COPY index.php /var/www/html/index.php
 EXPOSE 80
-    ```
+```
     
 >The `Dockerfile` sets up a PHP environment and copies the web application script (index.php) into the container.
     
 -  Build the web application container image:
-    ```bash
+```bash
 docker build -t webapp .
-    ```
+```
     
 >With `-t` you define a tag for your image. In this case: `webapp`.
 
@@ -97,9 +97,9 @@ docker ps
 
 **Step 6: Test the Setup**
 - Open your web browser and navigate to:
-    ```
-    http://localhost:8080
-    ```
+```
+http://localhost:8080
+```
     
 - You should see the message: "Connected to the database successfully!"
 
