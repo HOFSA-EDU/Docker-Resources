@@ -80,8 +80,7 @@ networks:
   front:
     driver: overlay
     attachable: true
-    ```
-    
+```
     
 2. Deploy the stack:
 ```bash
