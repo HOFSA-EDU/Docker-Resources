@@ -117,7 +117,7 @@ docker service update --env-add VERSION=$(date +%H%M%S) demo_whoami
 docker service ps demo_whoami
 ```
     
-    Observe uninterrupted responses while containers are updated one by one.
+Observe uninterrupted responses while containers are updated one by one.
 
 
 ---
@@ -130,7 +130,7 @@ docker node update --availability drain pi-w1
 docker service ps demo_whoami
 ```
 
-    Tasks will be rescheduled to other nodes.
+Tasks will be rescheduled to other nodes.
     
 2. Reactivate the node:
     
