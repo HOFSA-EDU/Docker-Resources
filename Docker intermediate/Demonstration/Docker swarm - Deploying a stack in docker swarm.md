@@ -20,16 +20,16 @@ By the end of this exercise, you will be able to:
 ## **Part A — Initialize the Swarm (≈25 min)**
 
 1. On the Manager, initialize the swarm:
-    ```bash 
+```bash 
 docker swarm init --advertise-addr <MANAGER_IP> docker swarm join-token worker
-    ```
+```
 
 Copy the worker join token.
 
 2. On each Worker, join the swarm:
-	```bash 
+```bash 
 docker swarm join --token <TOKEN> <MANAGER_IP>:2377
-	```
+```
 
 3. Verify the cluster from the Manager:
 	`docker node ls`
@@ -106,16 +106,16 @@ Multiple requests should return different container IDs → load balancing works
 ## **Part C — Scaling and Rolling Updates (≈20 min)**
 
 1. Scale the service:
-    ```bash
+```bash
 docker service scale demo_whoami=8 
 docker service ps demo_whoami
-    ```
+```
     
 2. Trigger a rolling update:
-    ```bash
+```bash
 docker service update --env-add VERSION=$(date +%H%M%S) demo_whoami
 docker service ps demo_whoami
-    ```
+```
     
     Observe uninterrupted responses while containers are updated one by one.
 
@@ -125,24 +125,24 @@ docker service ps demo_whoami
 ## **Part D — Node Maintenance & Self-Healing (≈15 min)**
 
 1. Put one Worker into maintenance mode:
-    ```bash 
+```bash 
 docker node update --availability drain pi-w1
 docker service ps demo_whoami
-    ```
+```
 
     Tasks will be rescheduled to other nodes.
     
 2. Reactivate the node:
     
-    ```bash 
+```bash 
 docker node update --availability active pi-w1
-    ```
+```
     
 3. (Optional) Stop Docker on one Worker and observe automatic rescheduling:
     
-    ```bash 
+```bash 
 sudo systemctl stop docker
-    ```
+```
     
 4. (Optional) Add constraints to distribute the tasks
 
