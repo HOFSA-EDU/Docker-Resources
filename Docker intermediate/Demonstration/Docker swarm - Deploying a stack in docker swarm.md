@@ -9,9 +9,9 @@ By the end of this exercise, you will be able to:
 
 ## **Setup & Requirements**
 
-- A team of **3 Raspberry Pis**:
+- A team of **4 Raspberry Pis**:
     - 1 Manager node (`pi-mgr`)
-    - 2 Worker nodes (`pi-w1`, `pi-w2`)
+    - 2 Worker nodes (`pi-w1`, `pi-w2`, `pi-w3`)
 - All Pis must be connected to the same network (e.g., `192.168.x.x`).
 - Docker Engine and Docker Compose plugin installed.
 - SSH access to each device.
@@ -38,6 +38,7 @@ docker swarm join --token <TOKEN> <MANAGER_IP>:2377
 ```bash 
 docker node update --label-add zone=front pi-w1
 docker node update --label-add zone=back  pi-w2
+docker node update --label-add zone=back  pi-w3
 ```
 
 ## **Part B — Deploy a Sample Stack (≈25 min)**
