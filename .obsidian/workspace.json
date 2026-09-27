@@ -44,12 +44,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker advanced/Demonstration/Docker build - Multi-Stage Build.md",
+                "file": "Docker intermediate/Demonstration/Docker swarm - Deploying a stack in docker swarm.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker build - Multi-Stage Build"
+              "title": "Docker swarm - Deploying a stack in docker swarm"
             }
           }
         ],
@@ -198,10 +198,12 @@
       "bases:Neue Base erstellen": false
     }
   },
-  "active": "823ba1262c918de1",
+  "active": "e1ad2daf1f083dd4",
   "lastOpenFiles": [
-    "Resources/Docker Life Cycle.canvas",
+    "Docker intermediate/Demonstration/Docker swarm -  Building a Docker cluster.md",
+    "Docker intermediate/Demonstration/Docker swarm - Deploying a stack in docker swarm.md",
     "Docker advanced/Demonstration/Docker build - Multi-Stage Build.md",
+    "Resources/Docker Life Cycle.canvas",
     "Docker advanced/Demonstration",
     "Docker advanced",
     "Untitled.canvas",
